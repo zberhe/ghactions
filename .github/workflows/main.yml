@@ -5,6 +5,8 @@ jobs:
     runs-on: ubuntu-latest
     name: A job to say hello
     steps:
+      - run: echo "${{ github.action_path }}" >> $GITHUB_PATH
+        shell: bash 
       - name: Checkout
         uses: actions/checkout@v3
       - name: Hello world action step
