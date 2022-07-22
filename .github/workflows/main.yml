@@ -1,0 +1,16 @@
+name: js-custom
+
+on: [push]
+#   schedule:
+#   - cron: "0 0 * * *" # triggers every midnight
+
+jobs:
+  hello_world_job:
+    runs-on: ubuntu-latest
+    name: A job to say hello
+    steps:
+      - name: package 
+        run: |
+          echo "name: ${{ steps.package.outputs.name }}"
+          echo "version: ${{ steps.package.outputs.version }}"
+          echo "npmjs-link: ${{ steps.package.outputs.npmjs-link }}"
