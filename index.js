@@ -1,5 +1,5 @@
 import fs from 'fs';
-import { join } from 'path';
+const path = require('path');
 const core = require('@actions/core');
 
 /**
@@ -7,8 +7,8 @@ const core = require('@actions/core');
  * @param {string} path
  * @returns {object}
  */
-const readPackageJson = function (path) {
-    const packageJson = fs.readFileSync(join(path, 'package.json')).toString();
+const readPackageJson = function (path1) {
+    const packageJson = fs.readFileSync(path.join(path1, 'package.json')).toString();
 
     return JSON.parse(packageJson);
 };
